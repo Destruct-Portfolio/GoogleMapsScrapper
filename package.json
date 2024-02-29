@@ -1,0 +1,39 @@
+{
+  "name": "googlemapsscrapper",
+  "version": "1.0.0",
+  "description": "scrape google maps for name of BS, address ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "start_": "node dist/index.js",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Destruct-Portfolio/GoogleMapsScrapper.git"
+  },
+  "keywords": [
+    "scrape",
+    "google",
+    "maps"
+  ],
+  "author": "ben hichem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Destruct-Portfolio/GoogleMapsScrapper/issues"
+  },
+  "homepage": "https://github.com/Destruct-Portfolio/GoogleMapsScrapper#readme",
+  "dependencies": {
+    "@destruct/logger": "^1.2.2",
+    "@types/node": "^20.11.20",
+    "json-as-xlsx": "^2.5.6",
+    "puppeteer": "^22.3.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sleep-promise": "^9.1.0",
+    "typescript": "^5.3.3"
+  }
+}
