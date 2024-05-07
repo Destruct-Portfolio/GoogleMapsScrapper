@@ -31,6 +31,7 @@ class WriteXlsx {
   }
 }
 
+
 class CollectLinks extends PuppeteerScrapper<string[]> {
   constructor(private capital: capital) {
     super([], { protocolTimeout: 999999, headless: false })
@@ -54,6 +55,7 @@ class CollectLinks extends PuppeteerScrapper<string[]> {
     })
   }
   private generateLink() {
+
     const { name, latitude, longitude } = this.capital
     const country_name = name.split(',')[1].trim()
     const capital_name = name.split(',')[0].split(' ').join('+')
@@ -98,6 +100,11 @@ class Article {
     for (let i = 0; i < this.de.length; i++) {
       const element = this.de[i]
       const url = new URL(element)
+      console.log({
+        name: url.pathname.split('/')[3].split('+').join(' '),
+        latitude: url.pathname.split('!')[5].slice(2),
+        longitude: url.pathname.split('!')[6].slice(2),
+      })
       this.payload.push({
         name: url.pathname.split('/')[3].split('+').join(' '),
         latitude: url.pathname.split('!')[5].slice(2),
